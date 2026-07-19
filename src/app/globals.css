@@ -39,7 +39,6 @@ body {
 .theme-yelp { --accent: #ff1a1a; }
 
 .hero-grid {
-  background-image: url("/assets/square.svg");
   background-size: 28px 28px;
   mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, black 10%, transparent 75%);
 }

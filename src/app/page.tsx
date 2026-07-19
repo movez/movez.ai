@@ -31,7 +31,10 @@ function HomeCanvas() {
       {/* warm dark base */}
       <div className="fixed inset-0 bg-[#0c0a09]" />
       {/* orange grid */}
-      <div className="hero-grid pointer-events-none fixed inset-0 opacity-50" />
+      <div
+        className="hero-grid pointer-events-none fixed inset-0 opacity-50"
+        style={{ backgroundImage: `url("${assets.square}")` }}
+      />
       {/* soft vignette */}
       <div
         className="pointer-events-none fixed inset-0"
