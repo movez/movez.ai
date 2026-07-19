@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { assets } from "@/utils/asset-utils";
 import { cn } from "@/utils/tailwind-utils";
 import { FrameworkRotation } from "@/components/framework-rotation";
@@ -20,12 +19,6 @@ const poppins = Poppins({
 
 function HomeCanvas() {
   const currentFramework = useFrameworkRotation(2000);
-  const [showBackground, setShowBackground] = useState(false);
-
-  useEffect(() => {
-    setShowBackground(true);
-  }, []);
-
   return (
     <Artboard className={cn("relative min-h-screen", `theme-${currentFramework}`)}>
       {/* warm dark base */}
@@ -43,29 +36,24 @@ function HomeCanvas() {
             "radial-gradient(ellipse 80% 60% at 50% 35%, rgba(255,122,61,0.12), transparent 60%)",
         }}
       />
-      {/* reveal */}
-      <div
-        className={cn(
-          "pointer-events-none fixed inset-0 z-20 bg-black transition-opacity duration-1000",
-          showBackground ? "opacity-0" : "opacity-100"
-        )}
-      />
 
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-16">
         <Draggable id="logos" className="mb-7 flex items-center justify-center gap-3 sm:mb-9 sm:gap-4">
           <FrameworkRotation currentFramework={currentFramework} />
-          <span
-            className="select-none text-3xl font-light text-white sm:text-4xl"
+          <Image
+            alt=""
+            src={assets.arrow}
+            width={48}
+            height={48}
+            className="h-8 w-8 object-contain sm:h-10 sm:w-10"
             aria-hidden
-          >
-            &gt;
-          </span>
+          />
           <Image
             alt="Movez"
             src={assets.movezlarge}
-            width={96}
-            height={112}
-            className="h-[80px] w-auto drop-shadow-[0_0_18px_rgba(168,85,247,0.55)] sm:h-[96px]"
+            width={128}
+            height={128}
+            className="h-[88px] w-[88px] object-contain drop-shadow-[0_0_18px_rgba(168,85,247,0.55)] sm:h-[104px] sm:w-[104px]"
             priority
           />
         </Draggable>
@@ -89,17 +77,17 @@ function HomeCanvas() {
             <Image
               alt="Movez"
               src={assets.movez}
-              width={28}
-              height={32}
-              className="inline-block h-7 w-auto drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]"
+              width={128}
+              height={128}
+              className="inline-block h-9 w-9 object-contain drop-shadow-[0_0_10px_rgba(168,85,247,0.5)] sm:h-10 sm:w-10"
             />
             <span className="text-white/70">+</span>
             <Image
               alt="OpenAI"
               src={assets.openai}
-              width={120}
-              height={28}
-              className="inline-block h-6 w-auto sm:h-7"
+              width={160}
+              height={40}
+              className="inline-block h-6 w-auto object-contain sm:h-7"
             />
           </p>
         </Draggable>

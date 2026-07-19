@@ -16,11 +16,11 @@ export const TimeUnit = ({
     </div>
     <div
       className={cn("text-[8px] font-medium", {
-        "text-orange-400":
-          currentFramework === "svelte" || currentFramework === "eventbrite",
+        "text-orange-400": currentFramework === "eventbrite",
         "text-purple-300": currentFramework === "foursquare",
         "text-sky-300": currentFramework === "safari",
         "text-yellow-300": currentFramework === "chrome",
+        "text-blue-400": currentFramework === "ticketmaster",
         "text-red-300": currentFramework === "meetup",
         "text-green-300": currentFramework === "tripadvisor",
         "text-teal-300": currentFramework === "notepad",

@@ -1,9 +1,9 @@
 export const frameworks = [
-  "svelte",
   "foursquare",
   "safari",
   "chrome",
   "eventbrite",
+  "ticketmaster",
   "meetup",
   "tripadvisor",
   "notepad",

@@ -26,11 +26,11 @@ body {
 }
 
 /* per-framework accents matching the short */
-.theme-svelte { --accent: #ff7a3d; }
 .theme-foursquare { --accent: #f94877; }
 .theme-safari { --accent: #5ac8fa; }
 .theme-chrome { --accent: #f4c20d; }
 .theme-eventbrite { --accent: #f05537; }
+.theme-ticketmaster { --accent: #026cdf; }
 .theme-meetup { --accent: #ed1c40; }
 .theme-tripadvisor { --accent: #34e0a1; }
 .theme-notepad { --accent: #ff8a3d; }
