@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <radialGradient id="ball" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#C4A1FF"/>
+      <stop offset="45%" stop-color="#7B3FE4"/>
+      <stop offset="100%" stop-color="#3B1A8A"/>
+    </radialGradient>
+    <linearGradient id="facet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#ball)"/>
+  <g opacity="0.35" stroke="#fff" stroke-width="1">
+    <path d="M60 8v104M8 60h104M22 22l76 76M98 22L22 98"/>
+    <ellipse cx="60" cy="60" rx="40" ry="56"/>
+    <ellipse cx="60" cy="60" rx="56" ry="40"/>
+    <ellipse cx="60" cy="60" rx="20" ry="56"/>
+    <ellipse cx="60" cy="60" rx="56" ry="20"/>
+  </g>
+  <path d="M34 78V40l18 28 16-28v38" stroke="url(#facet)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 78V40l18 28 16-28v38" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

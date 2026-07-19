@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #ff7a3d;
+  --bg: #0c0a09;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg);
+  color: white;
+  overflow-x: hidden;
+}
+
+.accent-text {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.accent-bg {
+  background-color: var(--accent);
+  transition: background-color 0.3s ease;
+}
+
+/* per-framework accents matching the short */
+.theme-svelte { --accent: #ff7a3d; }
+.theme-foursquare { --accent: #f94877; }
+.theme-safari { --accent: #5ac8fa; }
+.theme-chrome { --accent: #f4c20d; }
+.theme-eventbrite { --accent: #f05537; }
+.theme-meetup { --accent: #ed1c40; }
+.theme-tripadvisor { --accent: #34e0a1; }
+.theme-notepad { --accent: #ff8a3d; }
+.theme-mobile { --accent: #ff5c7a; }
+.theme-desktop { --accent: #a8b0bb; }
+.theme-yelp { --accent: #ff1a1a; }
+
+.hero-grid {
+  background-image: url("/assets/square.svg");
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, black 10%, transparent 75%);
+}
