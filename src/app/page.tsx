@@ -106,7 +106,7 @@ function HomeCanvas() {
               window.open("https://beta.movez.ai", "_blank", "noopener,noreferrer");
             }}
           >
-            Request Access
+            Try The Beta
           </a>
         </Draggable>
       </div>
