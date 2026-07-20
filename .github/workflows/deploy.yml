@@ -33,7 +33,7 @@ jobs:
       - name: Build static export
         env:
           # Project Pages URL: https://movez.github.io/movez.ai/
-          NEXT_PUBLIC_BASE_PATH: /movez.ai
+          NEXT_PUBLIC_BASE_PATH: ""
         run: npm run build
 
       - name: Upload Pages artifact
