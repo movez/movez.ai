@@ -32,9 +32,16 @@ jobs:
 
       - name: Build static export
         env:
-          # Project Pages URL: https://movez.github.io/movez.ai/
+          # Custom domain https://movez.ai (root paths)
           NEXT_PUBLIC_BASE_PATH: ""
         run: npm run build
+
+      # Old builds used /movez.ai/... asset URLs; keep those paths working for cached browsers.
+      - name: Compatibility asset paths
+        run: |
+          mkdir -p out/movez.ai
+          cp -R out/_next out/movez.ai/_next
+          cp -R out/assets out/movez.ai/assets
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
