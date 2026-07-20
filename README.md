@@ -1,18 +1,16 @@
-# Next.js Event Launch Page
+# Movez.AI
 
-## Overview
+Interactive Discovery landing page (Next.js).
 
-Welcome to the repository for building an Event Launch Page using Next.js 13, TypeScript, and Tailwind CSS. This project aims to recreate the captivating event registration experience from Builder.io's AI launch event. The page features a dynamic grid background, a rotating framework logo, an animated countdown timer, and a color-changing UI.
+## Run locally
 
-## How to Code Along
+```bash
+npm install
+npm run dev
+```
 
-Clone this repository to your local machine.
-Run `npm install` to install all the necessary packages.
-Run `npm run dev` to start the development server.
-Head to localhost:3000 to view the app.
+Open http://localhost:3000
 
-## Links & Resources
+## Deploy
 
-[YouTube Video Tutorial](https://youtu.be/VPpw6_S44J0?si=iRwJa8J4CkoQJn0a)
-
-[velocity.builder.io](https://velocity.builder.io/)
+Pushes to `main` deploy to GitHub Pages via `.github/workflows/deploy.yml` (custom domain [movez.ai](https://movez.ai)).

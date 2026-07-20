@@ -85,7 +85,7 @@ export function Artboard({ children, className }: ArtboardProps) {
 
   return (
     <div
-      className={cn("relative touch-none", className)}
+      className={cn("relative", className)}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}

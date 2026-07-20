@@ -17,20 +17,23 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-function HomeCanvas() {
+function Hero() {
   const currentFramework = useFrameworkRotation(2000);
+
   return (
-    <Artboard className={cn("relative min-h-screen", `theme-${currentFramework}`)}>
-      {/* warm dark base */}
-      <div className="fixed inset-0 bg-[#0c0a09]" />
-      {/* orange grid */}
+    <Artboard
+      className={cn(
+        "relative isolate min-h-screen overflow-hidden",
+        `theme-${currentFramework}`
+      )}
+    >
+      <div className="absolute inset-0 bg-[#0c0a09]" />
       <div
-        className="hero-grid pointer-events-none fixed inset-0 opacity-50"
+        className="hero-grid pointer-events-none absolute inset-0 opacity-50"
         style={{ backgroundImage: `url("${assets.square}")` }}
       />
-      {/* soft vignette */}
       <div
-        className="pointer-events-none fixed inset-0"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
             "radial-gradient(ellipse 80% 60% at 50% 35%, rgba(255,122,61,0.12), transparent 60%)",
@@ -38,7 +41,10 @@ function HomeCanvas() {
       />
 
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-16">
-        <Draggable id="logos" className="mb-7 flex items-center justify-center gap-3 sm:mb-9 sm:gap-4">
+        <Draggable
+          id="logos"
+          className="mb-7 flex items-center justify-center gap-3 sm:mb-9 sm:gap-4"
+        >
           <FrameworkRotation currentFramework={currentFramework} />
           <Image
             alt=""
@@ -85,32 +91,46 @@ function HomeCanvas() {
             <Image
               alt="OpenAI"
               src={assets.openai}
-              width={160}
-              height={40}
-              className="inline-block h-6 w-auto object-contain sm:h-7"
+              width={200}
+              height={50}
+              className="inline-block h-11 w-auto object-contain"
             />
           </p>
         </Draggable>
 
         <Draggable id="cta">
-          <a
-            href="https://beta.movez.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="accent-bg block rounded-md px-7 py-3.5 text-sm font-bold text-black sm:text-base"
-            onClick={(event) => {
-              // Edit mode: drag wins; double-click still opens the link.
-              event.preventDefault();
-            }}
-            onDoubleClick={() => {
-              window.open("https://beta.movez.ai", "_blank", "noopener,noreferrer");
-            }}
-          >
-            Try The Beta
-          </a>
+          <div className="flex flex-col items-center gap-3 sm:flex-row">
+            <a
+              href="https://beta.movez.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-bg block rounded-md px-7 py-3.5 text-sm font-bold text-black sm:text-base"
+              onClick={(event) => {
+                // Edit mode: drag wins; double-click still opens the link.
+                event.preventDefault();
+              }}
+              onDoubleClick={() => {
+                window.open(
+                  "https://beta.movez.ai",
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+              }}
+            >
+              Try The Beta
+            </a>
+            <a
+              href="#product"
+              className="rounded-md border border-white/25 px-7 py-3.5 text-sm font-bold text-white/90 transition hover:border-white/50 hover:bg-white/5 sm:text-base"
+              onClick={(event) => {
+                event.preventDefault();
+              }}
+            >
+              See Product
+            </a>
+          </div>
         </Draggable>
       </div>
-
     </Artboard>
   );
 }
@@ -118,7 +138,9 @@ function HomeCanvas() {
 export default function Home() {
   return (
     <AppStateProvider>
-      <HomeCanvas />
+      <main>
+        <Hero />
+      </main>
     </AppStateProvider>
   );
 }
